@@ -1,19 +1,19 @@
 #our CLI Controller
 require 'pry'
-#require 'pry-rescue'
-#require 'pry-stack_explorer'
-#require 'pry-doc'
-#require_relative '.\lib\task.rb'
-class Sw3p::CLI #< Sw3p::InteractiveRecord
+require 'pry-rescue'
+require 'pry-stack_explorer'
+require 'pry-doc'
+require_relative 'task'
+require_relative 'sw3p'
+class Sw3p::CLI 
 	 
 	def call 
-		puts <<~ HEREDOC
-		______________________________________________________
+		puts <<~HEREDOC
+		_____________________________________________________
 		Hello  Welcome to 
 		Storm water Trackinglog Instance Creation Program
 		______________________________________________________
-		
-		HEREDOC 
+		HEREDOC
 		menu 
 	end 
 
@@ -62,62 +62,63 @@ class Sw3p::CLI #< Sw3p::InteractiveRecord
 	    27.Truck Wash manifest
 	    ____________________________________________________________________________
 	    "
-	    user_input = gets.input.to_i
+	    user_input = gets.to_i
 	    case user_input
 	    when user_input == 1
 	    	@task=Sw3p::CLI::Tracking.new(task:"Identify changes to Pollution Prevention Team")
+	    	binding.pry
 	    when user_input == 2
-	    	@task=Sw3p::CLI::Task.new(task:"ID changes to non-stormwater discharges")
+	    	@task=Sw3p::CLI::Tracking.new(task:"ID changes to non-stormwater discharges")
 	    when user_input == 3
-	    	@task=Sw3p::CLI::Task.new(task:"ID changes to inventory of exposed mat'l")
+	    	@task=Sw3p::CLI::Tracking.new(task:"ID changes to inventory of exposed mat'l")
 	    when user_input == 4
-	    	@task=Sw3p::CLI::Task.new(task:"Updates to narrative of all potential pollutant sources")
+	    	@task=Sw3p::CLI::Tracking.new(task:"Updates to narrative of all potential pollutant sources")
 	    when user_input == 5
-	    	@task=Sw3p::CLI::Task.new(task:"Site map update")
+	    	@task=Sw3p::CLI::Tracking.new(task:"Site map update")
 	    when user_input == 6
-	   	    @task=Sw3p::CLI::Task.new(task:"Spills and Leaks Quarterly Updates Log")
+	   	    @task=Sw3p::CLI::Tracking.new(task:"Spills and Leaks Quarterly Updates Log")
 	    when user_input == 7
-	    	@task=Sw3p::CLI::Task.new(task:"Best Management Practices")
+	    	@task=Sw3p::CLI::Tracking.new(task:"Best Management Practices")
 	    when user_input == 8
-	    	@task=Sw3p::CLI::Task.new(task:"Spill Prevention and response measures")
+	    	@task=Sw3p::CLI::Tracking.new(task:"Spill Prevention and response measures")
 	    when user_input == 9
-	    	@task=Sw3p::CLI::Task.new(task:"Maint Prog of Structural Controls: Manifest")
+	    	@task=Sw3p::CLI::Tracking.new(task:"Maint Prog of Structural Controls: Manifest")
 	    when user_input == 10
-	    	@task=Sw3p::CLI::Task.new(task:"Employee Training Program")
+	    	@task=Sw3p::CLI::Tracking.new(task:"Employee Training Program")
 		when user_input == 11
-	    	@task=Sw3p::CLI::Task.new(task:"Rain Gauge Monitoring")
+	    	@task=Sw3p::CLI::Tracking.new(task:"Rain Gauge Monitoring")
 	    when user_input == 12
-	    	@task=Sw3p::CLI::Task.new(task:"Benchmark Monitoring")
+	    	@task=Sw3p::CLI::Tracking.new(task:"Benchmark Monitoring")
 	    when user_input == 13
-	    	@task=Sw3p::CLI::Task.new(task:"Site Compliance Evaluation Report")
+	    	@task=Sw3p::CLI::Tracking.new(task:"Site Compliance Evaluation Report")
 	    when user_input == 14
-		    @task=Sw3p::CLI::Task.new(task:"Program Timeline for Pollution Measures and Controls Activities")
+		    @task=Sw3p::CLI::Tracking.new(task:"Program Timeline for Pollution Measures and Controls Activities")
 	    when user_input == 15
-	    	@task=Sw3p::CLI::Task.new(task:"Five Year Permit Renewal")
+	    	@task=Sw3p::CLI::Tracking.new(task:"Five Year Permit Renewal")
 	    when user_input == 16
-		    @task=Sw3p::CLI::Task.new(task:"Periodic Inspection with Checklist")
+		    @task=Sw3p::CLI::Tracking.new(task:"Periodic Inspection with Checklist")
 	    when user_input == 17
-	 	    @task=Sw3p::CLI::Task.new(task:"Daily Monitoring Report of Numeric Effluent")
+	 	    @task=Sw3p::CLI::Tracking.new(task:"Daily Monitoring Report of Numeric Effluent")
 	    when user_input == 18
-	    	@task=Sw3p::CLI::Task.new(task:"City Engineer Inspection Report Response")
+	    	@task=Sw3p::CLI::Tracking.new(task:"City Engineer Inspection Report Response")
 	    when user_input == 19
-		    @task=Sw3p::CLI::Task.new(task:"Plan revisions log")
+		    @task=Sw3p::CLI::Tracking.new(task:"Plan revisions log")
 	    when user_input == 20
-	    	@task=Sw3p::CLI::Task.new(task:"MSGP copy")
+	    	@task=Sw3p::CLI::Tracking.new(task:"MSGP copy")
 	    when user_input == 21
-	    	@task=Sw3p::CLI::Task.new(task:"SW3P preparation")
+	    	@task=Sw3p::CLI::Tracking.new(task:"SW3P preparation")
 		when user_input == 22
-		    @task=Sw3p::CLI::Task.new(task:"Spill prevention countermeasue control plan")
+		    @task=Sw3p::CLI::Tracking.new(task:"Spill prevention countermeasue control plan")
 		when user_input == 23
-	    	@task=Sw3p::CLI::Task.new(task:"FMD collaboration")
+	    	@task=Sw3p::CLI::Tracking.new(task:"FMD collaboration")
 	    when user_input == 24
-	    	@task=Sw3p::CLI::Task.new(task:"Annual compliance signature page")
+	    	@task=Sw3p::CLI::Tracking.new(task:"Annual compliance signature page")
 	    when user_input == 25
-		    @task=Sw3p::CLI::Task.new(task:"Visual examination")
+		    @task=Sw3p::CLI::Tracking.new(task:"Visual examination")
 	    when user_input == 26
-	    	@task=Sw3p::CLI::Task.new(task:"COH SWQ permit renewal")
+	    	@task=Sw3p::CLI::Tracking.new(task:"COH SWQ permit renewal")
 	    when user_input == 27
-		    @task=Sw3p::CLI::Task.new(task:"Truck Wash manifest")
+		    @task=Sw3p::CLI::Tracking.new(task:"Truck Wash manifest")
 	   	when user_input == 30
 	    	self.goodbye
 	    end
@@ -148,38 +149,38 @@ class Sw3p::CLI #< Sw3p::InteractiveRecord
 	    15.Central- COH Transfer Station
 	    ____________________________________________________________________________
 	    "
-	    user_input = gets.input.to_i
+	    user_input = gets.to_i
 		case user_input
 	    when user_input == 1
-	   		@site=Sw3p::CLI::Site.new(site:"5614 Neches")
+	   		@site=Sw3p::CLI::Tracking.new(site:"5614 Neches")
 	    when user_input == 2
-	    	@site=Sw3p::CLI::Site.new(site:"11500 S Post Oak")
+	    	@site=Sw3p::CLI::Tracking.new(site:"11500 S Post Oak")
 	    when user_input == 3
-	    	@site=Sw3p::CLI::Site.new(site:"1245 Judiway")
+	    	@site=Sw3p::CLI::Tracking.new(site:"1245 Judiway")
 	    when user_input == 4
-	    	@site=Sw3p::CLI::Site.new(site:"1502 Central")
+	    	@site=Sw3p::CLI::Tracking.new(site:"1502 Central")
 	    when user_input == 5
-	    	@site=Sw3p::CLI::Site.new(site:"5900 Westpark")
+	    	@site=Sw3p::CLI::Tracking.new(site:"5900 Westpark")
 	    when user_input == 6
-	    	@site=Sw3p::CLI::Site.new(site:"South ESC")
+	    	@site=Sw3p::CLI::Tracking.new(site:"South ESC")
 	    when user_input == 7
-	    	@site=Sw3p::CLI::Site.new(site:"10875 SW Freeway")
+	    	@site=Sw3p::CLI::Tracking.new(site:"10875 SW Freeway")
 	    when user_input == 8
-	    	@site=Sw3p::CLI::Site.new(site:"2240 Central")
+	    	@site=Sw3p::CLI::Tracking.new(site:"2240 Central")
 	    when user_input == 9
-	    	@site=Sw3p::CLI::Site.new(site:"144000 Sommermeyer")
+	    	@site=Sw3p::CLI::Tracking.new(site:"144000 Sommermeyer")
 	    when user_input == 10
-	    	@site=Sw3p::CLI::Site.new(site:"5100 Sunbeam")
+	    	@site=Sw3p::CLI::Tracking.new(site:"5100 Sunbeam")
 		when user_input == 11
-			@site=Sw3p::CLI::Site.new(site:"5575 Kirkpatrick")
+			@site=Sw3p::CLI::Tracking.new(site:"5575 Kirkpatrick")
 	    when user_input == 12
-	    	@site=Sw3p::CLI::Site.new(site:"9003 North Main")
+	    	@site=Sw3p::CLI::Tracking.new(site:"9003 North Main")
 	    when user_input == 13
-	    	@site=Sw3p::CLI::Site.new(site:"Westpark- COH Transfer Station")
+	    	@site=Sw3p::CLI::Tracking.new(site:"Westpark- COH Transfer Station")
 	    when user_input == 14
-	    	@site=Sw3p::CLI::Site.new(site:"Sommermeyer-COH Transfer Station")
+	    	@site=Sw3p::CLI::Tracking.new(site:"Sommermeyer-COH Transfer Station")
 	    when user_input == 15
-	    	@site=Sw3p::CLI::Site.new(site:"Central- COH Transfer Station")
+	    	@site=Sw3p::CLI::Tracking.new(site:"Central- COH Transfer Station")
 	   	when user_input == 30 
 	    	self.goodbye#EXIT CLI
 	    end
@@ -202,22 +203,22 @@ class Sw3p::CLI #< Sw3p::InteractiveRecord
 	    7.Semi-Annual, Instance
 	    ____________________________________________________________________________
 	    "
-	    user_input = gets.input.to_i
+	    user_input = gets.to_i
 		case user_input
 	    when user_input == 1
-	    	@frequency=Sw3p::CLI::Frequency.new(frequency:"Daily Instance")
+	    	@frequency=Sw3p::CLI::Tracking.new(frequency:"Daily Instance")
 	    when user_input == 2
-	 	    @frequency=Sw3p::CLI::Frequency.new(frequency:"Weekly Instance")
+	 	    @frequency=Sw3p::CLI::Tracking.new(frequency:"Weekly Instance")
 	    when user_input == 3
-	     	@frequency=Sw3p::CLI::Frequency.new(frequency:"Monthly Instance")
+	     	@frequency=Sw3p::CLI::Tracking.new(frequency:"Monthly Instance")
 	    when user_input == 4
-	    	@frequency=Sw3p::CLI::Frequency.new(frequency:"Quarterly Instance")
+	    	@frequency=Sw3p::CLI::Tracking.new(frequency:"Quarterly Instance")
 	    when user_input == 5
-	    	@frequency=Sw3p::CLI::Frequency.new(frequency:"Annual Instance")
+	    	@frequency=Sw3p::CLI::Tracking.new(frequency:"Annual Instance")
 	    when user_input == 6
-	    	@frequency=Sw3p::CLI::Frequency.new(frequency:"Instance")
+	    	@frequency=Sw3p::CLI::Tracking.new(frequency:"Instance")
 	    when user_input == 7
-	  		@frequency=Sw3p::CLI::Frequency.new(frequency:"Semi-Annual Instance")
+	  		@frequency=Sw3p::CLI::Tracking.new(frequency:"Semi-Annual Instance")
 	  	when user_input == 30
 	  		self.goodbye
 	  	end 
@@ -242,35 +243,37 @@ class Sw3p::CLI #< Sw3p::InteractiveRecord
 	    9.Project Manager
 	    ____________________________________________________________________________
 	    "
-	    user_input = gets.input.to_i
+	    user_input = gets.to_i
 		case user_input
 	    when user_input == 1
-	    	@reporting = Sw3p::CLI::Reporting.new(reporting:"Deputy Assistant Director SW")
+	    	@reporting = Sw3p::CLI::Tracking.new(reporting:"Deputy Assistant Director SW")
 	    when user_input == 2
-		    @reporting = Sw3p::CLI::Reporting.new(reporting:"Deputy Assistant Director SE")
+		    @reporting = Sw3p::CLI::Tracking.new(reporting:"Deputy Assistant Director SE")
 	    when user_input == 3
-	   	    @reporting = Sw3p::CLI::Reporting.new(reporting:"Deputy Assistant Director NE")
+	   	    @reporting = Sw3p::CLI::Tracking.new(reporting:"Deputy Assistant Director NE")
 	    when user_input == 4
-	    	@reporting = Sw3p::CLI::Reporting.new(reporting:"Deputy Assistant Director NW")
+	    	@reporting = Sw3p::CLI::Tracking.new(reporting:"Deputy Assistant Director NW")
 	    when user_input == 5
-	    	@reporting = Sw3p::CLI::Reporting.new(reporting:"Recycling Division Manager")
+	    	@reporting = Sw3p::CLI::Tracking.new(reporting:"Recycling Division Manager")
 	    when user_input == 6
-	    	@reporting = Sw3p::CLI::Reporting.new(reporting:"Recycling Division Westpark Superintendent")
+	    	@reporting = Sw3p::CLI::Tracking.new(reporting:"Recycling Division Westpark Superintendent")
 	    when user_input == 7
-		    @reporting = Sw3p::CLI::Reporting.new(reporting:"Recycling Division ESC Superintendent")
+		    @reporting = Sw3p::CLI::Tracking.new(reporting:"Recycling Division ESC Superintendent")
 	    when user_input == 8
-	    	@reporting = Sw3p::CLI::Reporting.new(reporting:"Parks and Rec")
+	    	@reporting = Sw3p::CLI::Tracking.new(reporting:"Parks and Rec")
 	    when user_input == 9
-	    	@reporting = Sw3p::CLI::Reporting.new(reporting:"Project Manager")
+	    	@reporting = Sw3p::CLI::Tracking.new(reporting:"Project Manager")
 	   	when user_input == 30
 	    	self.goodbye
 	    end 
+	    self.comments_titles
 	 end 
 	
 	def self.comments_titles
 		puts "provide comments to the report(under 255 characters)"
 		user_input = gets.to_s
-			if max_length.length > 255
+		max_length = user_input.length
+			if max_length > 255
 	    			puts 'Limit exceeds 255 characters - error'
 	    			self.comments_titles
 			else
@@ -282,7 +285,7 @@ class Sw3p::CLI #< Sw3p::InteractiveRecord
 
 	def self.goodbye
 		puts "thank you for your input"
-		KERNEL.exit
+		Kernel.exit
 	end 
 
 end 

@@ -1,4 +1,4 @@
-class comments < Sw3p
+class Comments < Sw3p
 	attr_accessor :comments
 	 @@all = []
 	 def initialize(comments:"None") 
