@@ -5,6 +5,7 @@ require 'pry-stack_explorer'
 require 'pry-doc'
 require_relative 'task'
 require_relative 'sw3p'
+require_relative 'tracking'
 class Sw3p::CLI 
 	 
 	def call 
@@ -63,63 +64,64 @@ class Sw3p::CLI
 	    ____________________________________________________________________________
 	    "
 	    user_input = gets.to_i
-	    case user_input
-	    when user_input == 1
-	    	@task=Sw3p::CLI::Tracking.new(task:"Identify changes to Pollution Prevention Team")
-	    	binding.pry
-	    when user_input == 2
-	    	@task=Sw3p::CLI::Tracking.new(task:"ID changes to non-stormwater discharges")
-	    when user_input == 3
-	    	@task=Sw3p::CLI::Tracking.new(task:"ID changes to inventory of exposed mat'l")
-	    when user_input == 4
-	    	@task=Sw3p::CLI::Tracking.new(task:"Updates to narrative of all potential pollutant sources")
-	    when user_input == 5
-	    	@task=Sw3p::CLI::Tracking.new(task:"Site map update")
-	    when user_input == 6
-	   	    @task=Sw3p::CLI::Tracking.new(task:"Spills and Leaks Quarterly Updates Log")
-	    when user_input == 7
-	    	@task=Sw3p::CLI::Tracking.new(task:"Best Management Practices")
-	    when user_input == 8
-	    	@task=Sw3p::CLI::Tracking.new(task:"Spill Prevention and response measures")
-	    when user_input == 9
-	    	@task=Sw3p::CLI::Tracking.new(task:"Maint Prog of Structural Controls: Manifest")
-	    when user_input == 10
-	    	@task=Sw3p::CLI::Tracking.new(task:"Employee Training Program")
-		when user_input == 11
-	    	@task=Sw3p::CLI::Tracking.new(task:"Rain Gauge Monitoring")
-	    when user_input == 12
-	    	@task=Sw3p::CLI::Tracking.new(task:"Benchmark Monitoring")
-	    when user_input == 13
-	    	@task=Sw3p::CLI::Tracking.new(task:"Site Compliance Evaluation Report")
-	    when user_input == 14
-		    @task=Sw3p::CLI::Tracking.new(task:"Program Timeline for Pollution Measures and Controls Activities")
-	    when user_input == 15
-	    	@task=Sw3p::CLI::Tracking.new(task:"Five Year Permit Renewal")
-	    when user_input == 16
-		    @task=Sw3p::CLI::Tracking.new(task:"Periodic Inspection with Checklist")
-	    when user_input == 17
-	 	    @task=Sw3p::CLI::Tracking.new(task:"Daily Monitoring Report of Numeric Effluent")
-	    when user_input == 18
-	    	@task=Sw3p::CLI::Tracking.new(task:"City Engineer Inspection Report Response")
-	    when user_input == 19
-		    @task=Sw3p::CLI::Tracking.new(task:"Plan revisions log")
-	    when user_input == 20
-	    	@task=Sw3p::CLI::Tracking.new(task:"MSGP copy")
-	    when user_input == 21
-	    	@task=Sw3p::CLI::Tracking.new(task:"SW3P preparation")
-		when user_input == 22
-		    @task=Sw3p::CLI::Tracking.new(task:"Spill prevention countermeasue control plan")
-		when user_input == 23
-	    	@task=Sw3p::CLI::Tracking.new(task:"FMD collaboration")
-	    when user_input == 24
-	    	@task=Sw3p::CLI::Tracking.new(task:"Annual compliance signature page")
-	    when user_input == 25
-		    @task=Sw3p::CLI::Tracking.new(task:"Visual examination")
-	    when user_input == 26
-	    	@task=Sw3p::CLI::Tracking.new(task:"COH SWQ permit renewal")
-	    when user_input == 27
-		    @task=Sw3p::CLI::Tracking.new(task:"Truck Wash manifest")
-	   	when user_input == 30
+	    binding.pry
+	    if user_input == 1
+	    binding.pry
+	    	@task=Sw3p::Tracking.new(task:"Identify changes to Pollution Prevention Team")
+		binding.pry
+	    elsif user_input == 2
+	    	@task=Sw3p::Tracking.new(task:"ID changes to non-stormwater discharges")
+	    elsif user_input == 3
+	    	@task=Sw3p::Tracking.new(task:"ID changes to inventory of exposed mat'l")
+	    elsif user_input == 4
+	    	@task=Sw3p::Tracking.new(task:"Updates to narrative of all potential pollutant sources")
+	    elsif user_input == 5
+	    	@task=Sw3p::Tracking.new(task:"Site map update")
+	    elsif user_input == 6
+	   	    @task=Sw3p::Tracking.new(task:"Spills and Leaks Quarterly Updates Log")
+	    elsif user_input == 7
+	    	@task=Sw3p::Tracking.new(task:"Best Management Practices")
+	    elsif user_input == 8
+	    	@task=Sw3p::Tracking.new(task:"Spill Prevention and response measures")
+	    elsif user_input == 9
+	    	@task=Sw3p::Tracking.new(task:"Maint Prog of Structural Controls: Manifest")
+	    elsif user_input == 10
+	    	@task=Sw3p::Tracking.new(task:"Employee Training Program")
+		elsif user_input == 11
+	    	@task=Sw3p::Tracking.new(task:"Rain Gauge Monitoring")
+	    elsif user_input == 12
+	    	@task=Sw3p::Tracking.new(task:"Benchmark Monitoring")
+	    elsif user_input == 13
+	    	@task=Sw3p::Tracking.new(task:"Site Compliance Evaluation Report")
+	    elsif user_input == 14
+		    @task=Sw3p::Tracking.new(task:"Program Timeline for Pollution Measures and Controls Activities")
+	    elsif user_input == 15
+	    	@task=Sw3p::Tracking.new(task:"Five Year Permit Renewal")
+	    elsif user_input == 16
+		    @task=Sw3p::Tracking.new(task:"Periodic Inspection with Checklist")
+	    elsif user_input == 17
+	 	    @task=Sw3p::Tracking.new(task:"Daily Monitoring Report of Numeric Effluent")
+	    elsif user_input == 18
+	    	@task=Sw3p::Tracking.new(task:"City Engineer Inspection Report Response")
+	    elsif user_input == 19
+		    @task=Sw3p::Tracking.new(task:"Plan revisions log")
+	    elsif user_input == 20
+	    	@task=Sw3p::Tracking.new(task:"MSGP copy")
+	    elsif user_input == 21
+	    	@task=Sw3p::Tracking.new(task:"SW3P preparation")
+		elsif user_input == 22
+		    @task=Sw3p::Tracking.new(task:"Spill prevention countermeasue control plan")
+		elsif user_input == 23
+	    	@task=Sw3p::Tracking.new(task:"FMD collaboration")
+	    elsif user_input == 24
+	    	@task=Sw3p::Tracking.new(task:"Annual compliance signature page")
+	    elsif user_input == 25
+		    @task=Sw3p::Tracking.new(task:"Visual examination")
+	    elsif user_input == 26
+	    	@task=Sw3p::Tracking.new(task:"COH SWQ permit renewal")
+	    elsif user_input == 27
+		    @task=Sw3p::Tracking.new(task:"Truck Wash manifest")
+	   	elsif user_input == 30
 	    	self.goodbye
 	    end
 		self.site_titles
