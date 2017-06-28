@@ -26,8 +26,5 @@ class Sw3p::Tracking
 	 	end
 	 	@@all << self
 	 end 
-	#http://blog.jayfields.com/2007/04/ruby-assigning-instance-variables-in.html
-	#http://blog.jayfields.com/2014/01/repl-driven-development.html
-
 end 
-#self.send("#{key}=", value)
+
