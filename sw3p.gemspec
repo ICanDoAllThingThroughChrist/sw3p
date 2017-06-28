@@ -33,5 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency 'pry', '~> 0.10.4'
   spec.add_development_dependency 'sqlite3', '~> 1.3', '>= 1.3.13'
-  
+  spec.add_development_dependency 'pry-rescue', '~> 1.4', '>= 1.4.5'
+  spec.add_development_dependency 'pry-stack_explorer', '~> 0.4.9.2'
+  spec.add_development_dependency 'pry-doc', '~> 0.10.0'
 end

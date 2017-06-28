@@ -1,8 +1,8 @@
 #our CLI Controller
 require 'pry'
-require 'pry-rescue'
-require 'pry-stack_explorer'
-require 'pry-doc'
+#require 'pry-rescue'
+#require 'pry-stack_explorer'
+#require 'pry-doc'
 #require_relative '.\lib\task.rb'
 class Sw3p::CLI #< Sw3p::InteractiveRecord
 	 
@@ -65,7 +65,7 @@ class Sw3p::CLI #< Sw3p::InteractiveRecord
 	    user_input = gets.input.to_i
 	    case user_input
 	    when user_input == 1
-	    	@task=Sw3p::CLI::Task.new(task:"Identify changes to Pollution Prevention Team")
+	    	@task=Sw3p::CLI::Tracking.new(task:"Identify changes to Pollution Prevention Team")
 	    when user_input == 2
 	    	@task=Sw3p::CLI::Task.new(task:"ID changes to non-stormwater discharges")
 	    when user_input == 3

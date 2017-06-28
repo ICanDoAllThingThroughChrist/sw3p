@@ -1,6 +1,9 @@
 require 'pry'
 require 'sqlite3'
 require 'rake'
+require 'pry-rescue'
+require 'pry-stack_explorer'
+require 'pry-doc'
 
 DB = {:conn =>SQLite3::Database.new("db/tracking.sqlite")}
 DB[:conn].executre("DROP TABLE IF EXISTS tracking")
