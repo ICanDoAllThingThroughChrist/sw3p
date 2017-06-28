@@ -64,11 +64,11 @@ class Sw3p::CLI
 	    ____________________________________________________________________________
 	    "
 	    user_input = gets.to_i
-	    binding.pry
+	    #binding.pry
 	    if user_input == 1
-	    binding.pry
+	    #binding.pry
 	    	@task=Sw3p::Tracking.new(task:"Identify changes to Pollution Prevention Team")
-		binding.pry
+		#binding.pry
 	    elsif user_input == 2
 	    	@task=Sw3p::Tracking.new(task:"ID changes to non-stormwater discharges")
 	    elsif user_input == 3

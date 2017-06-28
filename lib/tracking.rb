@@ -4,35 +4,30 @@ require 'pry-stack_explorer'
 require 'pry-doc'
 require_relative 'sw3p'
 require_relative 'cli'
+
 class Sw3p::Tracking 
 	 attr_accessor :task, :site, :frequency, :reporting, :comments
 	 @@all = []
 	 def initialize(task:"nil", site:"nil", frequency: "nil", reporting: "nil", comments:"nil") 
-	 binding.pry
-	    if task != nil
-	    	task = self.task(task: 'user_input')
-	    end 
+	 	local_variables.each do |k|
+	 		if k == task
+	 		v = eval(k.to_s)
+	 		instance_variable_set(Sw3p::Tasks.new.send(k= "value")) unless v.nil?
+	 		elsif  k == frequency
+	 		v = eval(k.to_s)
+	 		instance_variable_set(Sw3p::Frequency.new.send(k= "value")) unless v.nil?
+	 		elsif  k == reporting
+	 		v = eval(k.to_s)
+	 		instance_variable_set(Sw3p::Reporting.new.send(k= "value")) unless v.nil?
+	 		elsif k == comments	
+	 		v = eval(k.to_s)
+	 		instance_variable_set(Sw3p::Comments.new.send(k= "value")) unless v.nil?
+	 		end 
+	 	end
 	 	@@all << self
 	 end 
 	#http://blog.jayfields.com/2007/04/ruby-assigning-instance-variables-in.html
-	 def task=(task: 'user_input')
-	 	@task=(Sw3p::Task.new(send(task: value)))
-	 end 
+	#http://blog.jayfields.com/2014/01/repl-driven-development.html
 
-	 def site=(site:"user_input")
-	 	@site = Sw3p::Task.new(send(site: value))
-	 end 
-
-	 def frequency=(frequency:"non")
-	 	@frequency = Sw3p::Task.new(send(frequency: value))
-	 end 
-
-	 def reporting=(reporting:"non")
-	 	@reporting = Sw3p::Task.new(send(reporting: value))
-	 end 
-
-	 def comments=(comments:"non")
-	 	@comments = Sw3p::Task.new(send(comments: value))
-	 end
-end
+end 
 #self.send("#{key}=", value)
