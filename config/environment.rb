@@ -5,49 +5,71 @@ require 'pry-rescue'
 require 'pry-stack_explorer'
 require 'pry-doc'
 
-DB = {:conn =>SQLite3::Database.new("db/tracking.sqlite")}
+DB = {:conn =>SQLite3::Database.new("../db/tracking.sqlite")}
 DB[:conn].execute("DROP TABLE IF EXISTS tracking")
+DB[:conn].execute("DROP TABLE IF EXISTS task")
+DB[:conn].execute("DROP TABLE IF EXISTS site")
+DB[:conn].execute("DROP TABLE IF EXISTS frequency")
+DB[:conn].execute("DROP TABLE IF EXISTS reporting")
+DB[:conn].execute("DROP TABLE IF EXISTS comments")
 
 sql = <<-SQL
-	CREATE TABLE IF NOT EXISTS tracking (
+	CREATE TABLE tracking (
 	id INTEGER PRIMARY KEY,
-	task_id INTEGER, #INNER JOIN
-	site_id INTEGER,#INNER JOIN
-	frequency_id INTEGER,#INNER JOIN
-	reporting_id INTEGER,#INNER JOIN
-	comments_id INTEGER,#INNER JOIN
+	task_id INTEGER,
+	site_id INTEGER,
+	frequency_id INTEGER,
+	reporting_id INTEGER,
+	comments_id INTEGER,
 	FOREIGN KEY(task_id) REFERENCES task(id),
 	FOREIGN KEY(site_id) REFERENCES site(id),
 	FOREIGN KEY(frequency_id) REFERENCES frequency(id),
 	FOREIGN KEY(reporting_id) REFERENCES reporting(id),
-	FOREIGN KEY(comments_id) REFERENCES comments(id),
-	)
-
-	CREATE TABLE IF NOT EXISTS task (
-	id INTEGER PRIMARY KEY,
-	task TEXT,#INNER JOIN
-	)
-
-	CREATE TABLE IF NOT EXISTS site (
-	id INTEGER PRIMARY KEY,
-	site TEXT,#INNER JOIN
-	)
-
-	CREATE TABLE IF NOT EXISTS frequency (
-	id INTEGER PRIMARY KEY,
-	frequency TEXT,#INNER JOIN
-	)
-
-	CREATE TABLE IF NOT EXISTS reporting (
-	id INTEGER PRIMARY KEY,
-	reporting TEXT,#INNER JOIN
-	)
-
-	CREATE TABLE IF NOT EXISTS comments (
-	id INTEGER PRIMARY KEY,
-	comments TEXT,#INNER JOIN
+	FOREIGN KEY(comments_id) REFERENCES comments(id)
 	)
 	SQL
 	
 	DB[:conn].execute(sql)
 	DB[:conn].results_as_hash = true
+
+sql = <<-SQL
+	CREATE TABLE task (
+	id INTEGER PRIMARY KEY,
+	task TEXT
+	)
+	SQL
+	DB[:conn].execute(sql)
+	DB[:conn].results_as_hash = true
+sql = <<-SQL
+	CREATE TABLE site (
+	id INTEGER PRIMARY KEY,
+	site TEXT
+	)
+	SQL
+	DB[:conn].execute(sql)
+	DB[:conn].results_as_hash = true
+sql = <<-SQL
+	CREATE TABLE frequency (
+	id INTEGER PRIMARY KEY,
+	frequency TEXT
+	)
+	SQL
+	DB[:conn].execute(sql)
+	DB[:conn].results_as_hash = true
+sql = <<-SQL
+	CREATE TABLE reporting (
+	id INTEGER PRIMARY KEY,
+	reporting TEXT
+	)
+	SQL
+	DB[:conn].execute(sql)
+	DB[:conn].results_as_hash = true
+sql = <<-SQL
+	CREATE TABLE comments (
+	id INTEGER PRIMARY KEY,
+	comments TEXT
+	)
+	SQL
+	DB[:conn].execute(sql)
+	DB[:conn].results_as_hash = true
+	
