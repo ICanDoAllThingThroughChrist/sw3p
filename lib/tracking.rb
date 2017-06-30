@@ -4,27 +4,22 @@ require 'pry-stack_explorer'
 require 'pry-doc'
 require_relative 'sw3p'
 require_relative 'cli'
+require_relative 'task'
+require_relative 'site'
+require_relative 'frequency'
+require_relative 'reporting'
+require_relative 'comments'
 
 class Sw3p::Tracking 
 	 attr_accessor :task, :site, :frequency, :reporting, :comments
 	 @@all = []
-	 def initialize(task:"nil", site:"nil", frequency: "nil", reporting: "nil", comments:"nil") 
-	 	local_variables.each do |k|
-	 		if k == task
-	 		v = eval(k.to_s)
-	 		instance_variable_set(Sw3p::Tasks.new.send(k= "value")) unless v.nil?
-	 		elsif  k == frequency
-	 		v = eval(k.to_s)
-	 		instance_variable_set(Sw3p::Frequency.new.send(k= "value")) unless v.nil?
-	 		elsif  k == reporting
-	 		v = eval(k.to_s)
-	 		instance_variable_set(Sw3p::Reporting.new.send(k= "value")) unless v.nil?
-	 		elsif k == comments	
-	 		v = eval(k.to_s)
-	 		instance_variable_set(Sw3p::Comments.new.send(k= "value")) unless v.nil?
+
+	 def initialize(hash) 
+			hash.each do |key, value|
+        	self.send("#{key}=", value)
 	 		end 
-	 	end
 	 	@@all << self
+	 	binding.pry
 	 end 
-end 
+end
 

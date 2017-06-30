@@ -1,4 +1,6 @@
-require_relative '.\sw3p.rb'
+require_relative 'sw3p'
+require_relative 'tracking'
+
 class Sw3p::Frequency 
 	attr_accessor :frequency
 	 @@all = []

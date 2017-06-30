@@ -1,4 +1,4 @@
-class site < Sw3p
+class Sw3p::Site
 	attr_accessor :site 
 	 @@all = []
 	 def initialize(site:"Northeast Svc Cntr") 

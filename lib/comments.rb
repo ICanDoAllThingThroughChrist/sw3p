@@ -1,4 +1,6 @@
-require_relative '.\sw3p.rb'
+require_relative 'sw3p'
+require_relative 'tracking'
+
 class Sw3p::Comments
 	attr_accessor :comments
 	 @@all = []

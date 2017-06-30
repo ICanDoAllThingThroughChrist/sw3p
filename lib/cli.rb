@@ -67,60 +67,60 @@ class Sw3p::CLI
 	    #binding.pry
 	    if user_input == 1
 	    #binding.pry
-	    	@task=Sw3p::Tracking.new(task:"Identify changes to Pollution Prevention Team")
+	    	@task=Sw3p::Tracking.new({task:"Identify changes to Pollution Prevention Team"})
 		#binding.pry
 	    elsif user_input == 2
-	    	@task=Sw3p::Tracking.new(task:"ID changes to non-stormwater discharges")
+	    	@task=Sw3p::Tracking.new({task:"ID changes to non-stormwater discharges"})
 	    elsif user_input == 3
-	    	@task=Sw3p::Tracking.new(task:"ID changes to inventory of exposed mat'l")
+	    	@task=Sw3p::Tracking.new({task:"ID changes to inventory of exposed mat'l"})
 	    elsif user_input == 4
-	    	@task=Sw3p::Tracking.new(task:"Updates to narrative of all potential pollutant sources")
+	    	@task=Sw3p::Tracking.new({task:"Updates to narrative of all potential pollutant sources"})
 	    elsif user_input == 5
-	    	@task=Sw3p::Tracking.new(task:"Site map update")
+	    	@task=Sw3p::Tracking.new({task:"Site map update"})
 	    elsif user_input == 6
-	   	    @task=Sw3p::Tracking.new(task:"Spills and Leaks Quarterly Updates Log")
+	   	    @task=Sw3p::Tracking.new({task:"Spills and Leaks Quarterly Updates Log"})
 	    elsif user_input == 7
-	    	@task=Sw3p::Tracking.new(task:"Best Management Practices")
+	    	@task=Sw3p::Tracking.new({task:"Best Management Practices"})
 	    elsif user_input == 8
-	    	@task=Sw3p::Tracking.new(task:"Spill Prevention and response measures")
+	    	@task=Sw3p::Tracking.new({task:"Spill Prevention and response measures"})
 	    elsif user_input == 9
-	    	@task=Sw3p::Tracking.new(task:"Maint Prog of Structural Controls: Manifest")
+	    	@task=Sw3p::Tracking.new({task:"Maint Prog of Structural Controls: Manifest"})
 	    elsif user_input == 10
-	    	@task=Sw3p::Tracking.new(task:"Employee Training Program")
+	    	@task=Sw3p::Tracking.new({task:"Employee Training Program"})
 		elsif user_input == 11
-	    	@task=Sw3p::Tracking.new(task:"Rain Gauge Monitoring")
+	    	@task=Sw3p::Tracking.new({task:"Rain Gauge Monitoring"})
 	    elsif user_input == 12
-	    	@task=Sw3p::Tracking.new(task:"Benchmark Monitoring")
+	    	@task=Sw3p::Tracking.new({task:"Benchmark Monitoring"})
 	    elsif user_input == 13
-	    	@task=Sw3p::Tracking.new(task:"Site Compliance Evaluation Report")
+	    	@task=Sw3p::Tracking.new({task:"Site Compliance Evaluation Report"})
 	    elsif user_input == 14
-		    @task=Sw3p::Tracking.new(task:"Program Timeline for Pollution Measures and Controls Activities")
+		    @task=Sw3p::Tracking.new({task:"Program Timeline for Pollution Measures and Controls Activities"})
 	    elsif user_input == 15
-	    	@task=Sw3p::Tracking.new(task:"Five Year Permit Renewal")
+	    	@task=Sw3p::Tracking.new({task:"Five Year Permit Renewal"})
 	    elsif user_input == 16
-		    @task=Sw3p::Tracking.new(task:"Periodic Inspection with Checklist")
+		    @task=Sw3p::Tracking.new({task:"Periodic Inspection with Checklist"})
 	    elsif user_input == 17
-	 	    @task=Sw3p::Tracking.new(task:"Daily Monitoring Report of Numeric Effluent")
+	 	    @task=Sw3p::Tracking.new({task:"Daily Monitoring Report of Numeric Effluent"})
 	    elsif user_input == 18
-	    	@task=Sw3p::Tracking.new(task:"City Engineer Inspection Report Response")
+	    	@task=Sw3p::Tracking.new({task:"City Engineer Inspection Report Response"})
 	    elsif user_input == 19
-		    @task=Sw3p::Tracking.new(task:"Plan revisions log")
+		    @task=Sw3p::Tracking.new({task:"Plan revisions log"})
 	    elsif user_input == 20
-	    	@task=Sw3p::Tracking.new(task:"MSGP copy")
+	    	@task=Sw3p::Tracking.new({task:"MSGP copy"})
 	    elsif user_input == 21
-	    	@task=Sw3p::Tracking.new(task:"SW3P preparation")
+	    	@task=Sw3p::Tracking.new({task:"SW3P preparation"})
 		elsif user_input == 22
-		    @task=Sw3p::Tracking.new(task:"Spill prevention countermeasue control plan")
+		    @task=Sw3p::Tracking.new({task:"Spill prevention countermeasue control plan"})
 		elsif user_input == 23
-	    	@task=Sw3p::Tracking.new(task:"FMD collaboration")
+	    	@task=Sw3p::Tracking.new({task:"FMD collaboration"})
 	    elsif user_input == 24
-	    	@task=Sw3p::Tracking.new(task:"Annual compliance signature page")
+	    	@task=Sw3p::Tracking.new({task:"Annual compliance signature page"})
 	    elsif user_input == 25
-		    @task=Sw3p::Tracking.new(task:"Visual examination")
+		    @task=Sw3p::Tracking.new({task:"Visual examination"})
 	    elsif user_input == 26
-	    	@task=Sw3p::Tracking.new(task:"COH SWQ permit renewal")
+	    	@task=Sw3p::Tracking.new({task:"COH SWQ permit renewal"})
 	    elsif user_input == 27
-		    @task=Sw3p::Tracking.new(task:"Truck Wash manifest")
+		    @task=Sw3p::Tracking.new({task:"Truck Wash manifest"})
 	   	elsif user_input == 30
 	    	self.goodbye
 	    end
@@ -152,38 +152,38 @@ class Sw3p::CLI
 	    ____________________________________________________________________________
 	    "
 	    user_input = gets.to_i
-		case user_input
-	    when user_input == 1
-	   		@site=Sw3p::CLI::Tracking.new(site:"5614 Neches")
-	    when user_input == 2
-	    	@site=Sw3p::CLI::Tracking.new(site:"11500 S Post Oak")
-	    when user_input == 3
-	    	@site=Sw3p::CLI::Tracking.new(site:"1245 Judiway")
-	    when user_input == 4
-	    	@site=Sw3p::CLI::Tracking.new(site:"1502 Central")
-	    when user_input == 5
-	    	@site=Sw3p::CLI::Tracking.new(site:"5900 Westpark")
-	    when user_input == 6
-	    	@site=Sw3p::CLI::Tracking.new(site:"South ESC")
-	    when user_input == 7
-	    	@site=Sw3p::CLI::Tracking.new(site:"10875 SW Freeway")
-	    when user_input == 8
-	    	@site=Sw3p::CLI::Tracking.new(site:"2240 Central")
-	    when user_input == 9
-	    	@site=Sw3p::CLI::Tracking.new(site:"144000 Sommermeyer")
-	    when user_input == 10
-	    	@site=Sw3p::CLI::Tracking.new(site:"5100 Sunbeam")
-		when user_input == 11
-			@site=Sw3p::CLI::Tracking.new(site:"5575 Kirkpatrick")
-	    when user_input == 12
-	    	@site=Sw3p::CLI::Tracking.new(site:"9003 North Main")
-	    when user_input == 13
-	    	@site=Sw3p::CLI::Tracking.new(site:"Westpark- COH Transfer Station")
-	    when user_input == 14
-	    	@site=Sw3p::CLI::Tracking.new(site:"Sommermeyer-COH Transfer Station")
-	    when user_input == 15
-	    	@site=Sw3p::CLI::Tracking.new(site:"Central- COH Transfer Station")
-	   	when user_input == 30 
+		if user_input == 1
+	   		@site=Sw3p::Tracking.new({site:"5614 Neches"})
+	   		#binding.pry
+	    elsif user_input == 2
+	    	@site=Sw3p::Tracking.new({site:"11500 S Post Oak"})
+	    elsif user_input == 3
+	    	@site=Sw3p::Tracking.new({site:"1245 Judiway"})
+	    elsif user_input == 4
+	    	@site=Sw3p::Tracking.new({site:"1502 Central"})
+	    elsif user_input == 5
+	    	@site=Sw3p::Tracking.new({site:"5900 Westpark"})
+	    elsif user_input == 6
+	    	@site=Sw3p::Tracking.new({site:"South ESC"})
+	    elsif user_input == 7
+	    	@site=Sw3p::Tracking.new({site:"10875 SW Freeway"})
+	    elsif user_input == 8
+	    	@site=Sw3p::Tracking.new({site:"2240 Central"})
+	    elsif user_input == 9
+	    	@site=Sw3p::Tracking.new({site:"144000 Sommermeyer"})
+	    elsif user_input == 10
+	    	@site=Sw3p::Tracking.new({site:"5100 Sunbeam"})
+		elsif user_input == 11
+			@site=Sw3p::Tracking.new({site:"5575 Kirkpatrick"})
+	    elsif user_input == 12
+	    	@site=Sw3p::Tracking.new({site:"9003 North Main"})
+	    elsif user_input == 13
+	    	@site=Sw3p::Tracking.new({site:"Westpark- COH Transfer Station"})
+	    elsif user_input == 14
+	    	@site=Sw3p::Tracking.new({site:"Sommermeyer-COH Transfer Station"})
+	    elsif user_input == 15
+	    	@site=Sw3p::Tracking.new({site:"Central- COH Transfer Station"})
+	   	elsif user_input == 30 
 	    	self.goodbye#EXIT CLI
 	    end
 	    self.frequency_listing
@@ -206,22 +206,21 @@ class Sw3p::CLI
 	    ____________________________________________________________________________
 	    "
 	    user_input = gets.to_i
-		case user_input
-	    when user_input == 1
-	    	@frequency=Sw3p::CLI::Tracking.new(frequency:"Daily Instance")
-	    when user_input == 2
-	 	    @frequency=Sw3p::CLI::Tracking.new(frequency:"Weekly Instance")
-	    when user_input == 3
-	     	@frequency=Sw3p::CLI::Tracking.new(frequency:"Monthly Instance")
-	    when user_input == 4
-	    	@frequency=Sw3p::CLI::Tracking.new(frequency:"Quarterly Instance")
-	    when user_input == 5
-	    	@frequency=Sw3p::CLI::Tracking.new(frequency:"Annual Instance")
-	    when user_input == 6
-	    	@frequency=Sw3p::CLI::Tracking.new(frequency:"Instance")
-	    when user_input == 7
-	  		@frequency=Sw3p::CLI::Tracking.new(frequency:"Semi-Annual Instance")
-	  	when user_input == 30
+	    if user_input == 1
+	    	@frequency=Sw3p::Tracking.new({frequency:"Daily Instance"})
+	    elsif user_input == 2
+	 	    @frequency=Sw3p::Tracking.new({frequency:"Weekly Instance"})
+	    elsif user_input == 3
+	     	@frequency=Sw3p::Tracking.new({frequency:"Monthly Instance"})
+	    elsif user_input == 4
+	    	@frequency=Sw3p::Tracking.new({frequency:"Quarterly Instance"})
+	    elsif user_input == 5
+	    	@frequency=Sw3p::Tracking.new({frequency:"Annual Instance"})
+	    elsif user_input == 6
+	    	@frequency=Sw3p::Tracking.new({frequency:"Instance"})
+	    elsif user_input == 7
+	  		@frequency=Sw3p::Tracking.new({frequency:"Semi-Annual Instance"})
+	  	elsif user_input == 30
 	  		self.goodbye
 	  	end 
 	    self.reporting_listing
@@ -246,26 +245,25 @@ class Sw3p::CLI
 	    ____________________________________________________________________________
 	    "
 	    user_input = gets.to_i
-		case user_input
-	    when user_input == 1
-	    	@reporting = Sw3p::CLI::Tracking.new(reporting:"Deputy Assistant Director SW")
-	    when user_input == 2
-		    @reporting = Sw3p::CLI::Tracking.new(reporting:"Deputy Assistant Director SE")
-	    when user_input == 3
-	   	    @reporting = Sw3p::CLI::Tracking.new(reporting:"Deputy Assistant Director NE")
-	    when user_input == 4
-	    	@reporting = Sw3p::CLI::Tracking.new(reporting:"Deputy Assistant Director NW")
-	    when user_input == 5
-	    	@reporting = Sw3p::CLI::Tracking.new(reporting:"Recycling Division Manager")
-	    when user_input == 6
-	    	@reporting = Sw3p::CLI::Tracking.new(reporting:"Recycling Division Westpark Superintendent")
-	    when user_input == 7
-		    @reporting = Sw3p::CLI::Tracking.new(reporting:"Recycling Division ESC Superintendent")
-	    when user_input == 8
-	    	@reporting = Sw3p::CLI::Tracking.new(reporting:"Parks and Rec")
-	    when user_input == 9
-	    	@reporting = Sw3p::CLI::Tracking.new(reporting:"Project Manager")
-	   	when user_input == 30
+		if user_input == 1
+	    	@reporting = Sw3p::Tracking.new({reporting:"Deputy Assistant Director SW"})
+	    elsif user_input == 2
+		    @reporting = Sw3p::Tracking.new({reporting:"Deputy Assistant Director SE"})
+	    elsif user_input == 3
+	   	    @reporting = Sw3p::Tracking.new({reporting:"Deputy Assistant Director NE"})
+	    elsif user_input == 4
+	    	@reporting = Sw3p::Tracking.new({reporting:"Deputy Assistant Director NW"})
+	    elsif user_input == 5
+	    	@reporting = Sw3p::Tracking.new({reporting:"Recycling Division Manager"})
+	    elsif user_input == 6
+	    	@reporting = Sw3p::Tracking.new({reporting:"Recycling Division Westpark Superintendent"})
+	    elsif user_input == 7
+		    @reporting = Sw3p::Tracking.new({reporting:"Recycling Division ESC Superintendent"})
+	    elsif user_input == 8
+	    	@reporting = Sw3p::Tracking.new({reporting:"Parks and Rec"})
+	    elsif user_input == 9
+	    	@reporting = Sw3p::Tracking.new({reporting:"Project Manager"})
+	   	elsif user_input == 30
 	    	self.goodbye
 	    end 
 	    self.comments_titles
@@ -281,6 +279,7 @@ class Sw3p::CLI
 			else
 	    			puts 'Limit is 255 characters - pass'
 					#new instance of comments created
+					@comments = Sw3p::Tracking.new({comments:"#{user_input}"})
 			end 
 		self.goodbye
 	end
