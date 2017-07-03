@@ -1,9 +1,23 @@
+require 'bundler/setup'
+Bundler.require
 require 'pry'
 require 'sqlite3'
 require 'rake'
 require 'pry-rescue'
 require 'pry-stack_explorer'
 require 'pry-doc'
+require 'active_record'
+
+DB = ActiveRecord::Base.establish_connection(
+      :adapter => "sqlite3",
+      :database => "../db/tracking.sqlite"
+    )
+
+DB = ActiveRecord::Base.connection
+
+if ENV["ACTIVE_RECORD_ENV"] == "test"
+    ActiveRecord::Migration.verbose = false
+ end
 
 DB = {:conn =>SQLite3::Database.new("../db/tracking.sqlite")}
 DB[:conn].execute("DROP TABLE IF EXISTS tracking")
