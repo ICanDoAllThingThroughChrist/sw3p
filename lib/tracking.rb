@@ -10,11 +10,18 @@ require_relative 'site'
 require_relative 'frequency'
 require_relative 'reporting'
 require_relative 'comments'
-require_relative 'Interactive'
-class Sw3p::Tracking < InteractiveRecord
-	   self.column_names.each do |col_name|
-       attr_accessor col_name.to_sym
+
+class Sw3p::Tracking < ActiveRecord::Base
+  attr_accessor :task, :site, :frequency, :reporting, :comments
+   @@all = []
+
+   def initialize(options={})
+        options.each do |index, value|
+          self.send("#{index}=", value)
      end
+        @@all << self
+        binding.pry
+   end
 
 end 
 

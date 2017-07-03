@@ -2,8 +2,11 @@ source "https://rubygems.org"
 
 # Specify your gem's dependencies in sw3p.gemspec
 gemspec
-gem 'sqlite3', '~> 1.3', '>= 1.3.13'
-gem 'pry', '~> 0.10.4'
-gem 'pry-rescue'
-gem 'pry-stack_explorer'
-gem 'pry-doc'
+ gem 'activerecord', :require => 'active_record'
+ gem 'rake'
+ gem 'require_all'
+ gem 'sqlite3'
+ gem 'pry'
+ gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
+ gem 'rspec'
+ gem 'database_cleaner'

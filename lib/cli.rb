@@ -3,9 +3,16 @@ require 'pry'
 require 'pry-rescue'
 require 'pry-stack_explorer'
 require 'pry-doc'
-require_relative 'task'
+require 'active_support/inflector'
+require 'sqlite3'
 require_relative 'sw3p'
-require_relative 'tracking'
+require_relative 'cli'
+require_relative 'task'
+require_relative 'site'
+require_relative 'frequency'
+require_relative 'reporting'
+require_relative 'comments'
+
 class Sw3p::CLI 
 	 
 	def call 
@@ -68,7 +75,7 @@ class Sw3p::CLI
 	    if user_input == 1
 	    #binding.pry
 	    	@task=Sw3p::Tracking.new({task:"Identify changes to Pollution Prevention Team"})
-		#binding.pry
+			#binding.pry
 	    elsif user_input == 2
 	    	@task=Sw3p::Tracking.new({task:"ID changes to non-stormwater discharges"})
 	    elsif user_input == 3
@@ -287,6 +294,7 @@ class Sw3p::CLI
 	def self.goodbye
 		puts "thank you for your input"
 		Kernel.exit
-	end 
+	end
 
+ 
 end 
