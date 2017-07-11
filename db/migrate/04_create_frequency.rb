@@ -1,4 +1,4 @@
-class Create CreateFrequencys < ActiveRecord::Migration
+class Create CreateFrequencys < ActiveRecord::Migration[5.0]
 	def up
 	end 
 

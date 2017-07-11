@@ -1,4 +1,4 @@
-class Create CreateTasks < ActiveRecord::Migration
+class Create CreateTasks < ActiveRecord::Migration[5.0]
 	def up
 	end 
 
@@ -11,3 +11,7 @@ class Create CreateTasks < ActiveRecord::Migration
 	 end  
 	end 
 end 
+#Primary keys - By default, Active Record will use an 
+#integer column named id as the table's primary key. 
+#When using Active Record Migrations to create your 
+#tables, this column will be automatically created

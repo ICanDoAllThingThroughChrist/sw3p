@@ -1,7 +1,8 @@
-source "https://rubygems.org"
+# A sample Gemfile
+ source "https://rubygems.org"
 
-# Specify your gem's dependencies in sw3p.gemspec
-gemspec
+ # gem "rails"
+
  gem 'activerecord', :require => 'active_record'
  gem 'rake'
  gem 'require_all'
@@ -10,3 +11,8 @@ gemspec
  gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
  gem 'rspec'
  gem 'database_cleaner'
+ gem 'foreigner'
+ #gem 'pry-rescue', '~> 1.4', '>= 1.4.2'
+ #gem 'pry-stack_explorer', '~> 0.4.9.2'
+ #gem 'pry-doc', '~> 0.10.0'
+ #gem 'interception', '~> 0.5'
